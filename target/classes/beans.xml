@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="triangle" scope="prototype" class="com.company.Traingle"/>
+<!--Setter Based !-->
+<!--<bean id="test" class="com.company.Test">-->
+<!--    <property name="shape" ref="triangle"/>-->
+<!--</bean>-->
+    <!--Constructor based !-->
+<!--    <bean id="test" class="com.company.Test">-->
+<!--        &lt;!&ndash; you can use name or type or index propert !&ndash;&gt;-->
+<!--        <constructor-arg name="length" value="20"></constructor-arg>-->
+<!--    </bean>-->
+    <!--Annonymous Bean !-->
+
+<!--    <bean id="test" class="com.company.Test">-->
+<!--        <property name="shape">-->
+<!--            <bean class="com.company.Traingle"/>-->
+<!--        </property>-->
+<!--    </bean>-->
+    <!--uSING IdRef !-->
+<!--    <bean id="test" class="com.company.Test">-->
+<!--        <property name="msg" >-->
+<!--           <idref  bean="triangle" />-->
+<!--        </property>-->
+<!--        <property name="shape" ref="triangle"/>-->
+<!--    </bean>-->
+    <!-- using Alliase !-->
+<!--    <alias name="test" alias="testTraingle"/>-->
+    <!-- Using Collections !-->
+    <bean id="triangle2" scope="prototype" class="com.company.Traingle"/>
+    <bean id="test" scope="prototype" class="com.company.Test">
+       <property name="shapes">
+           <list>
+               <ref bean="triangle"/>
+               <ref bean="triangle2"/>
+           </list>
+       </property>
+    </bean>
+</beans>

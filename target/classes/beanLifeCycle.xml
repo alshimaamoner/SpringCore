@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="triangle" class="test.beanLifeCycle.Triangle" autowire="constructor" destroy-method="destroy" init-method="init" />
+    <bean id="point1" class="test.beanLifeCycle.Point" init-method="afterPropertiesSet" destroy-method="destroy"/>
+    <bean id="point2" class="test.beanLifeCycle.Point" />
+    <bean id="testBean" class="test.beanLifeCycle.TestBeanPostProcessor"/>
+</beans>

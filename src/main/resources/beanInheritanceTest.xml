@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean name="triangle" class="test.inheritanceTest.Triangle" abstract="true">
+    <property name="point">
+        <list>
+            <ref bean="point"/>
+        </list>
+    </property>
+</bean>
+    <bean name="triangle2" class="test.inheritanceTest.Triangle" parent="triangle">
+        <property name="point">
+            <!-- Does'nt add parent list without enabling merge !-->
+            <list merge="true">
+                <ref bean="point2"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="point" class="test.inheritanceTest.Point">
+        <property name="x" value="2"/>
+        <property name="y" value="5"/>
+     </bean>
+    <bean id="point2" class="test.inheritanceTest.Point">
+        <property name="x" value="7"/>
+        <property name="y" value="8"/>
+    </bean>
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--AutoWire By name Must BeanId the same name of property in class !-->
+<!--    <bean id="triangle" class="test.autowire.Triangle" autowire="byName"/>-->
+<!--    <bean id="point1" class="test.autowire.Point">-->
+<!--        <property name="x" value="1"/>-->
+<!--        <property name="y" value="2"/>-->
+<!--    </bean>-->
+<!--    <bean id="point2" class="test.autowire.Point">-->
+<!--        <property name="x" value="3"/>-->
+<!--        <property name="y" value="4"/>-->
+<!--    </bean>-->
+    <!--AutoWire By Type must one bean specific to one class !-->
+<!--    <bean id="triangle" class="test.autowire.Triangle" autowire="byType"/>-->
+<!--    <bean id="point1" class="test.autowire.Point" scope="prototype">-->
+<!--        <property name="x" value="1"/>-->
+<!--        <property name="y" value="2"/>-->
+<!--    </bean>-->
+<!--    <bean id="point2" class="test.autowire.Point">-->
+<!--        <property name="x" value="3"/>-->
+<!--        <property name="y" value="4"/>-->
+<!--    </bean>-->
+    <!--AutoWire By Constructor is the same By Type but specific using in constructor not setter !-->
+    <bean id="triangle" class="test.autowire.Triangle" autowire="constructor"/>
+    <bean id="point1" class="test.autowire.Point">
+        <property name="x" value="3"/>
+        <property name="y" value="4"/>
+    </bean>
+    <bean id="point2" class="test.autowire.Point">
+        <property name="x" value="5"/>
+        <property name="y" value="2"/>
+    </bean>
+</beans>
